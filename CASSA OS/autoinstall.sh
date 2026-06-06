@@ -18,5 +18,11 @@ for ((i = 3; i >= 1; i--)); do
     echo "Melanjutkan dalam $i. Tekan ctrl+c untuk membatalkan"
 done
 
-#Install TailScale
+## Install Tailscale
+    if ! command -v tailscale >/dev/null 2>&1; then
+    echo -e "${GREEN}================== Menginstall Tailscale ==================${NC}"
     curl -fsSL https://tailscale.com/install.sh | sh
+    echo -e "${GREEN}================== Tailscale berhasil diinstall ==================${NC}"
+else
+    echo -e "${GREEN}================== Tailscale sudah terinstall ==================${NC}"
+fi
